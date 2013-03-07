@@ -1,7 +1,6 @@
 var
   should = require('should'),
-  oauth2 = require('../oauth2'),
-  di = require('../injector');
+  oauth2 = require('../lib/oauth2');
 
 describe('OAuth2 server <API>: ', function () {
   it('should OAuth2 setup', function (done) {
@@ -15,6 +14,7 @@ describe('OAuth2 server <API>: ', function () {
     done();
   });
 
+  /*
   it('should OAuth2 inject', function (done) {
     oauth2.inject = ['Client', 'AccessToken', 'AuthorizationCode'];
     
@@ -26,5 +26,6 @@ describe('OAuth2 server <API>: ', function () {
     console.log(oauth2);
     done();
   });
-
+  */
+  
 });

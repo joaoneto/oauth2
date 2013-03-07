@@ -1,11 +1,10 @@
 var express = require('express'),
   mongoose = require('mongoose'),
-  oauth2_mongoose = require('./oauth2_mongoose'),
-  oauth2 = require('./oauth2');
+  oauth2 = require('../lib/oauth2');
 
 mongoose.connect('mongodb://localhost/authorization');
 
-oauth2.driver(oauth2_mongoose);
+oauth2.driver('mongoose');
 
 var app = module.exports = express();
 
