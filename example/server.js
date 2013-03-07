@@ -1,14 +1,13 @@
 var express = require('express'),
-  mongoose = require('mongoose'),
-  oauth2 = require('../lib/oauth2');
+  mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/authorization');
+var oauth2 = require('../lib/oauth2');
 
-oauth2.driver('mongoose');
+oauth2.driver('mongoose', { db: 'mongodb://localhost/teste' });
 
 var app = module.exports = express();
 
-app.configure(function() {
+app.configure(function () {
   app.use(express.bodyParser());
   app.use(express.cookieParser());
 });
