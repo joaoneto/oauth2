@@ -19,5 +19,8 @@
     "token"
   ],
   "author": "João Pinto Neto",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "~3.5.7"
+  }
 }
