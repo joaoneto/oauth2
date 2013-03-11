@@ -15,10 +15,10 @@ app.configure(function () {
 });
 
 // List and create client form
-app.get('/clients', utils.listClients);
+app.get('/clients', routes.listClients);
 
 // Add new client
-app.post('/clients', utils.createClient);
+app.post('/clients', routes.createClient);
 
 // Oauth2 authorization
 app.post('/authorization', oauth2.handleAuthorization());
