@@ -26,4 +26,10 @@ describe('Utils <LIB>: ', function () {
     console.log(parse_uri);
     done();
   });
+
+  it('should Utils.parseUri parse uri with queryString and hash fragment', function (done) {
+    var parse_uri = utils.parseUri('http://localhost/callback/?teste=teste#top:foo=bar');
+    console.log(parse_uri);
+    done();
+  });
 });
