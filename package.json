@@ -6,6 +6,9 @@
   "scripts": {
     "test": "make test"
   },
+  "dependencies": {
+    "mongoose": "~3.5.7"
+  },
   "devDependencies": {
     "mocha": "~1.8.1",
     "supertest": "~0.5.1",
@@ -19,8 +22,5 @@
     "token"
   ],
   "author": "João Pinto Neto",
-  "license": "MIT",
-  "dependencies": {
-    "mongoose": "~3.5.7"
-  }
+  "license": "MIT"
 }

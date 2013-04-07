@@ -20,11 +20,37 @@ app.get('/clients', routes.listClients);
 // Add new client
 app.post('/clients', routes.createClient);
 
-// Oauth2 authorization
-app.post('/authorization', oauth2.handleAuthorization());
+// User Authorization
+// app.get('/authorization', routes.authorization());
+
+// Oauth2 handle user Authorization
+app.get('/authorization', oauth2.handleAuthorization(), function (req, res) {
+  console.log(req.method);
+});
+app.post('/authorization', oauth2.handleAuthorization(), function (req, res) {
+  console.log(req.method);
+});
+app.all('/authorization', oauth2.handleAuthorization(), function (req, res) {
+  console.log(req.method);
+});
+/*
+app.all('/authorization', function (req, res) {
+  oauth2.handleAuthorization()(req, res);
+  console.log('Authorization');
+  console.log(req.method);
+});
+*/
 
 // Oauth2 endpoint
-app.post('/token', oauth2.grantAccessToken());
+app.post('/token', oauth2.grantAccessToken(), function (req, res) {
+  console.log('Endpoint');
+})
+/*
+app.post('/token', function (req, res) {
+  oauth2.grantAccessToken()(req, res);
+  console.log('Endpoint');
+});
+*/
 
 // Restricted resource
 app.get('/resource', oauth2.verifyAccessToken(), function (req, res) {

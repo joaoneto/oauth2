@@ -49,8 +49,13 @@ module.exports = function (oauth2) {
     });
   };
 
+  var _authorization = function (req, res) {
+
+  };
+
   return {
     listClients: _listClients,
-    createClient: _createClient
+    createClient: _createClient,
+    authorization: _authorization
   };
 }
